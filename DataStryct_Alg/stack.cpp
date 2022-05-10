@@ -7,12 +7,12 @@
 
 //**************************Global variables 全局变量****************************
 
-StackTypdef g_stack = { 0,{1,2} };
+StackTypdef g_stack = { NULL,{1,2} };
 //*******Local Macros, Typedfes and variables  局部宏定义、数据类型、变量**********
 
 //**********************Global Function Prototypes全局函数原型********************
 
-void Stack_Empty(const StackTypdef *input)
+int Stack_Empty(const StackTypdef *input);
 //********************Local Function Prototypes局部函数原型***********************
 
 
@@ -20,16 +20,17 @@ void Stack_Empty(const StackTypdef *input)
 
 int main(int argc, char * *argv)
 {
-
-	//Stack_Empty(&g_stack);
-	printf("***********1***********")
+	int  serous = 0;
+	serous = Stack_Empty(&g_stack);
+	printf("%d /n", serous);
 	return EXIT_SUCCESS;
+
 }
 
 
-void Stack_Empty(const StackTypdef *input)
+int Stack_Empty(const StackTypdef *input)
 {
-	if (input->top == 0)
+	if (input->top == NULL)
 	{
 		return true;
 	}
