@@ -8,7 +8,7 @@
 /*结构体*/
 typedef struct
 {
-	int *top; //栈顶指针
+	int top; //栈顶
 	int buff[STACK_NUM];
 }StackTypdef;
 
@@ -16,7 +16,8 @@ typedef struct
 
 /*API接口定义*/
 
-
+int Stack_Empty(const StackTypdef *input);     //栈是否为空
+void Stack_Push(StackTypdef *input, int value);//压栈
 
 #endif
 
