@@ -13,5 +13,21 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="数据结构">
+      <UniqueIdentifier>{2d1a1345-d317-4f6e-9288-f162d52733ac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="笔记">
+      <UniqueIdentifier>{ba607737-a860-449d-8f1f-3707f352cd21}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="源.cpp">
+      <Filter>数据结构</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Stack.md">
+      <Filter>笔记</Filter>
+    </Text>
   </ItemGroup>
 </Project>
