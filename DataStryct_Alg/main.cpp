@@ -12,8 +12,6 @@ StackTypdef g_stack = { 0,{0} };
 
 //**********************Global Function Prototypes全局函数原型********************
 
-int Stack_Empty(const StackTypdef *input);     //栈是否为空
-void Stack_Push(StackTypdef *input, int value);//压栈
 //********************Local Function Prototypes局部函数原型***********************
 
 
@@ -27,11 +25,22 @@ int main(int argc, char * *argv)
 	printf("%d \n", serous);
 	Stack_Push(&g_stack, 1);
 	serous = Stack_Empty(&g_stack);
+	Stack_Push(&g_stack, 2);
 	printf("%d \n", serous);
-	printf("********1********");
-	for (i = 0; i < STACK_NUM; i++)
+	printf("********1********\n");
+	for (i = 0; i < g_stack.top; i++)
 	{
-		printf("%d\n", g_stack.buff[i]);
+		printf("%d ", g_stack.buff[i]);
+	}
+	Stack_Pop(&g_stack);
+	Stack_Pop(&g_stack);
+	Stack_Pop(&g_stack);
+	Stack_Push(&g_stack, 1);
+	printf("\n");
+	printf("********2********\n");
+	for (i = 0; i < g_stack.top; i++)
+	{
+		printf("%d ", g_stack.buff[i]);
 	}
 	return EXIT_SUCCESS;
 

@@ -11,8 +11,9 @@
 
 //**********************Global Function Prototypes全局函数原型********************
 
-int Stack_Empty(const StackTypdef *input);     //栈是否为空
-void Stack_Push(StackTypdef *input, int value);//压栈
+int Stack_Empty(StackTypdef *input);     //栈是否为空
+int Stack_Push(StackTypdef *input, int value);//压栈
+int Stack_Pop(StackTypdef *input);			   //出栈
 //********************Local Function Prototypes局部函数原型***********************
 
 
@@ -21,17 +22,18 @@ void Stack_Push(StackTypdef *input, int value);//压栈
 //-------------------------------------------------------------------------------
 //名称：检查栈是否为空;
 //输入参数：无;
-//返回值：1为空 0不为空;
+//返回值：-1为空 1不为空;
 //-------------------------------------------------------------------------------
-int Stack_Empty(const StackTypdef *input)
+int Stack_Empty(StackTypdef *input)
 {
-	if (input->top == 0)
+	if (input->top <= 0)
 	{
-		return true;
+		input->top = 0;
+		return 1;
 	}
 	else
 	{
-		return false;
+		return 0;
 	}
 
 }
@@ -40,11 +42,36 @@ int Stack_Empty(const StackTypdef *input)
 //输入参数：无;
 //返回值：无;
 //-------------------------------------------------------------------------------
-void Stack_Push(StackTypdef *input , int value)
+int Stack_Push(StackTypdef *input , int value)
 {
-	input->top = input->top + 1;     //压栈指针先增，在将数据存入
-	input->buff[input->top] = value; //存入值
+	if (Stack_Empty(input) == 1)
+	{
+		input->buff[input->top] = value; //存入值
+	}
+	else
+	{
+		input->top = input->top + 1;     //压栈指针先增，在将数据存入
+		input->buff[input->top] = value; //存入值
+		return 1;
+	}
+	input->top = input->top + 1;
+	return 1;
 }
-
+//-------------------------------------------------------------------------------
+//名称：出栈;
+//输入参数：无;
+//返回值：无;
+//-------------------------------------------------------------------------------
+int Stack_Pop(StackTypdef *input)
+{
+	if (input->top -  Stack_Empty(input) == -2)//-1为栈底
+	{
+		return EXIT_FAILURE;
+	}
+	else if((input->top = input->top - 1) > -2)
+	{
+		return input->buff[input->top + 1];
+	}
+}
 //********************Local Function Definition 局部函数实现**********************
 
