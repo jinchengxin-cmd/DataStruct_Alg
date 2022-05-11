@@ -4,11 +4,14 @@
     <Filter Include="栈（Stack）">
       <UniqueIdentifier>{2d1a1345-d317-4f6e-9288-f162d52733ac}</UniqueIdentifier>
     </Filter>
-    <Filter Include="队列（queue）">
-      <UniqueIdentifier>{9a6a9709-1ea9-418e-9bd8-13a82cbdefbb}</UniqueIdentifier>
-    </Filter>
     <Filter Include="主函数（main）">
       <UniqueIdentifier>{11374810-85ba-48a3-9a4d-a1cbec6b0c33}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="队列（Queue）">
+      <UniqueIdentifier>{9a6a9709-1ea9-418e-9bd8-13a82cbdefbb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="链表（Linked_List）">
+      <UniqueIdentifier>{b07d9fe2-63e8-463a-9325-68f40b46d007}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -16,10 +19,13 @@
       <Filter>栈（Stack）</Filter>
     </ClCompile>
     <ClCompile Include="queue.cpp">
-      <Filter>队列（queue）</Filter>
+      <Filter>队列（Queue）</Filter>
     </ClCompile>
     <ClCompile Include="main.cpp">
       <Filter>主函数（main）</Filter>
+    </ClCompile>
+    <ClCompile Include="link_list.cpp">
+      <Filter>链表（Linked_List）</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -27,12 +33,10 @@
       <Filter>栈（Stack）</Filter>
     </ClInclude>
     <ClInclude Include="queue.h">
-      <Filter>队列（queue）</Filter>
+      <Filter>队列（Queue）</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Stack.md">
-      <Filter>栈（Stack）</Filter>
-    </None>
+    <ClInclude Include="link_list.h">
+      <Filter>链表（Linked_List）</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
