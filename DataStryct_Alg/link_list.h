@@ -6,15 +6,21 @@
 
 
 //*****************************Typedefs 结构体类型*******************************
-typedef struct
+typedef struct LinkListTypeDef 
 {
-
-}LinkListTypdef;
+	struct LinkListTypeDef * prior; //指向直接前趋
+	int data;
+	struct LinkListTypeDef * next; //指向直接后继
+}LinkListTypeDef;
 
 //****************************Extern Variables 外部变量**************************
 
 
 //**************************Function Prototypes 函数原型*************************
+LinkListTypeDef* Link_Init(LinkListTypeDef * head);
+void Link_List_Display(LinkListTypeDef * head);
+LinkListTypeDef * Link_List_Insert(LinkListTypeDef * head, int data, int add);
+LinkListTypeDef * Link_List_Del(LinkListTypeDef * head, int data);
 
 #endif
 

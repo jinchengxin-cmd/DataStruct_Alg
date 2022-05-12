@@ -39,4 +39,9 @@
       <Filter>链表（Linked_List）</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="REMAKE.md">
+      <Filter>链表（Linked_List）</Filter>
+    </Text>
+  </ItemGroup>
 </Project>
